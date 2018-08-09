@@ -3,7 +3,7 @@
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
-const authEvents = require('./User/events')
+const authEvents = require('./user/events')
 const employeeEvents = require('./employees/events')
 
 // use require without a reference to ensure a file is bundled
