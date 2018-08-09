@@ -1,0 +1,14 @@
+{{#each employees as |employee|}}
+
+  <div class="handlebars" id="employee-{{employee._id}}">
+    <div class="card-body col-sm-2 col-med-2" style="background-color: white; width: 31.5%; min-height: 300px; margin: 10px; padding-top: 20px;">
+      <h3 data-id={{employee._id}}><strong>Question:</strong> {{employee.question}}</h3>
+      <form class='update-employee' data-id="{{employee._id}}">
+        <input type="text" name="employee[question]" tabindex="4" class="form-control" placeholder="{{employee.question}}" required>
+        <button style="margin: 15px 5px;" type="submit" class="btn btn-info btn-style">UPDATE EMPLOYEE</button>
+        <button style="margin: 15px 5px;" class="btn btn-danger btn-style delete-employee" data-id='{{employee._id}}'>DELETE EMPLOYEE</button>
+      </form>
+    </div>
+  </div>
+
+{{/each}}
