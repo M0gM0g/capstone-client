@@ -21,6 +21,15 @@ const onCreateEmployeeTab = function (event) {
   $('#dash-nav').delay(200).fadeIn(100)
 }
 
+const onEditEmployeeTab = function (event) {
+  console.log('button clicked!')
+  event.preventDefault()
+  $('#dashboard').delay(100).fadeOut(100)
+  $('#edit-employee').delay(200).fadeIn(100)
+  $('#logo').delay(100).fadeOut(100)
+  $('#dash-nav').delay(200).fadeIn(100)
+}
+
 const onCreateEmployee = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -31,6 +40,7 @@ const onCreateEmployee = function (event) {
 
 const onGetEmployees = function (event) {
   event.preventDefault()
+  // const data = getFormFields(event.target)
   employeesApi.getEmployees()
     .then(employeesUi.getEmployeesSuccess)
     .catch(employeesUi.getEmployeesError)
@@ -39,15 +49,31 @@ const onGetEmployees = function (event) {
 const onRemoveEmployee = function (event) {
   event.preventDefault()
   const employeeId = $(event.target).attr('data-id')
+  console.log('data is ', employeeId)
   employeesApi.removeEmployee(employeeId)
     .then(refreshEmployeesOnDelete)
     .catch(employeesUi.removeEmployeeError)
 }
 
+// const onRemoveEmployee = function (event) {
+//   event.preventDefault()
+//   // const entryId = $(event.target).closest('button').attr('data-id')
+//   // const entryId = $(event.target).('data-id')
+//   // const data = $(event.target).attr('data-id')
+//
+//   const data = getFormFields(event.target)
+//   console.log('data is ', data)
+//   employeesApi.removeEmployee(data)
+//     .then(refreshEmployeesOnDelete)
+//     .catch(employeesUi.removeEmployeeError)
+// }
+
 const onUpdateEmployee = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const employeeId = $(event.target).attr('data-id')
+  console.log('data is ', data)
+  console.log('employeeId is ', employeeId)
   employeesApi.updateEmployee(data, employeeId)
     .then(employeesUi.updateEmployeeSuccess)
     .catch(employeesUi.updateEmployeeError)
@@ -82,5 +108,6 @@ module.exports = {
   refreshEmployees,
   onCreateEmployeeTab,
   onDashNav,
-  onGetUserEmployees
+  onGetUserEmployees,
+  onEditEmployeeTab
 }

@@ -8,7 +8,6 @@ const employeeEvents = require('./employees/events')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-
 $(() => {
   $('#sign-out').hide()
   $('#change-password').hide()
@@ -36,7 +35,7 @@ $(() => {
   $('.create').on('click', employeeEvents.onCreateEmployeeTab)
   // $('.your-Employees').on('click', employeeEvents.onYourEmployeesTab)
 
-  $('.your-employees').on('click', employeeEvents.onGetUserEmployees)
+  $('.your-employees').on('click', employeeEvents.onGetEmployees)
 
   $('#view-your-employees-btn').on('click', employeeEvents.onGetUserEmployees)
 
@@ -46,17 +45,17 @@ $(() => {
   // dashboard hover effect
   $('.create').hover(
     function () {
-      $(this).css({'background-color': 'rgba(133, 227, 253, 1)'})
+      $(this).css({'background-color': '#6d6d6d'})
     },
     function () {
-      $(this).css({'background-color': 'rgba(133, 227, 253, .6)'})
+      $(this).css({'background-color': '#d4d4d4'})
     })
   $('.your-employees').hover(
     function () {
-      $(this).css({'background-color': 'rgba(82, 215, 253, 1)'})
+      $(this).css({'background-color': '#6d6d6d'})
     },
     function () {
-      $(this).css({'background-color': 'rgba(82, 215, 253, .6)'})
+      $(this).css({'background-color': '#bbbbbb'})
     })
   $('.all-employees').hover(
     function () {
@@ -71,8 +70,13 @@ $(() => {
   $('#create-employee-error').hide()
   $('#create-employee-form').on('submit', employeeEvents.onCreateEmployee)
 
+  // Edit employeeEvents
+  $('#edit-employee').hide()
+  $('#edit-employee-error').hide()
+  $('#edit-employee-form').on('submit', employeeEvents.onCreateEmployee)
+
   // Update Employee
-  $('.show-content').on('submit', '.update-employee', employeeEvents.onUpdateEmployee)
+  $('.update-employee').on('click', employeeEvents.onEditEmployeeTab)
 
   // Remove Employee
   $('.show-content').on('click', '.delete-employee', employeeEvents.onRemoveEmployee)

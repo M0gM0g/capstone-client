@@ -21,7 +21,7 @@
               <span class="icon-bar"></span>
             </button>
             <a id="logo" class="navbar-brand brand-custom" href="#">re-View</a>
-            <a id="dash-nav" class="navbar-brand brand-custom" href="#"><span class="glyphicon glyphicon-th"></span> DASHBOARD</a>
+            <a id="dash-nav" class="navbar-brand brand-custom" href="#">re-View</a>
 
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
@@ -57,7 +57,7 @@
     							<div class="col-lg-12">
     								<form id="register-form" style="display: block;">
                       <div id="register-error" class="alert alert-danger">
-                        <strong>Unable to register!</strong> Please try again!
+                        <strong>Unable to register.</strong> Please try again.
                       </div>
     									<div class="form-group">
     										<input type="email" name="credentials[email]" tabindex="1" class="form-control" placeholder="Email Address" required>
@@ -79,7 +79,7 @@
                     <form id="login-form" style="display: none;">
                       <div id="register-success"></div>
                       <div id="login-error" class="alert alert-danger">
-                        <strong>Unable to log in!</strong> Please try again!
+                        <strong>Unable to log in.</strong> Please try again.
                       </div>
                       <div class="form-group">
     										<input type="email" name="credentials[email]" id="email" tabindex="1" class="form-control" placeholder="Email Address" required>
@@ -109,18 +109,19 @@
           <div class="row">
             <h1>Welcome to re-View</h1>
             <h2>All your direct reports at a glance</h2>
+            <h2>Keeping track of your team's progress, goals and carreer trajectory, simplified.</h2>
           </div>
         </div>
 
         <div class="container-fluid text-center dashboard">
           <div class="row">
-            <div class="col-sm-4 create">
-              <img width="60px" src="https://i.imgur.com/9VxsuVf.png">
-              <h4>Create direct report</h4>
+            <div class="col-sm-6 create">
+              <img width="60px" src="https://i.imgur.com/aGWnRZg.png">
+              <h4>Create A Direct Report</h4>
             </div>
-            <div class="col-sm-4 your-employees">
-              <img width="60px" src="https://i.imgur.com/sNtUpPc.png">
-              <h4>View your direct reports</h4>
+            <div class="col-sm-6 your-employees">
+              <img width="60px" src="https://i.imgur.com/xSytO1Z.png">
+              <h4>View Your Direct Reports</h4>
             </div>
           </div>
         </div>
@@ -139,7 +140,7 @@
                     <div class="col-lg-12">
                       <form id="create-employee-form" style="display: block;">
                         <div id="create-employee-error" class="alert alert-danger">
-                          <strong>Unable to create employee!</strong> Please try again!
+                          <strong>Unable to create employee.</strong> Please try again.
                         </div>
                         <div>
                           <img width="75px" src="https://i.imgur.com/9VxsuVf.png">
@@ -154,9 +155,7 @@
                         </div>
                         <div class="form-group">
                           <div class="row">
-                            <div class="col-sm-6">
-                              <input type="button" id="view-your-Employees-btn" class="form-control btn btn-your-Employees" value="View Your Employees">
-                            </div>
+
                             <div class="col-sm-6">
                               <input type="submit" class="form-control btn btn-create-Employee" value="Create Your Employee">
                             </div>
@@ -173,6 +172,50 @@
 
       </div>
       <!--CREATE Employee END-->
+
+      <!--Edit EMPLOYEE START-->
+      <div id="edit-employee">
+
+        <div class="container-fluid text-center edit-employee">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="panel panel-login">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <form id="edit-employee-form" style="display: block;">
+                        <div id="edit-employee-error" class="alert alert-danger">
+                          <strong>Unable to edit employee.</strong> Please try again.
+                        </div>
+                        <div>
+                          <img width="75px" src="https://i.imgur.com/9VxsuVf.png">
+                          <h1>Edit a direct report</h1>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="employee[name]" class="form-control" placeholder="Name" required>
+                          <input type="integer" name="employee[salary]" class="form-control" placeholder="Salary" required>
+                          <input type="text" name="employee[goals]" class="form-control" placeholder="Goals" required>
+                          <input type="text" name="employee[reviews]" class="form-control" placeholder="Reviews" required>
+                          <input type="date" name="employee[date]" class="form-control" placeholder="Date" required>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <input type="submit" class="form-control btn btn-edit-Employee" value="Edit Your Employee">
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--Edit Employee END-->
 
       <!-- Success Message Modal -->
       <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
@@ -216,7 +259,7 @@
               <form id="change-password-form">
                 <div class="form-group">
                   <div id="change-pw-error" class="alert alert-danger">
-                    <strong>Change password failed!</strong> Please try again!
+                    <strong>Change password failed.</strong> Please try again.
                   </div>
                   <label for="exampleInputEmail1">Old Password</label>
                   <input name="passwords[old]" type="password" class="form-control" aria-describedby="emailHelp" placeholder="Old Password">

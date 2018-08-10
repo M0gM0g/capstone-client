@@ -33,7 +33,7 @@ const logInSuccess = function (logInResponse) {
   $('#auth-forms').delay(100).fadeOut(100)
   $('#dashboard').delay(200).fadeIn(100)
   $('#successModal').modal('show')
-  $('#success-message').html('Welcome' + store.user.email + '!')
+  $('#success-message').html('Welcome ' + store.user.email + ". Let's get started.")
 }
 
 const logInError = function (logInError) {

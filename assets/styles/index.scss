@@ -12,8 +12,12 @@ body {
   padding-top: 75px;
 }
 
-.card {
+.card-body {
+    border-radius: 15px;
   background-color: #fff;
+  margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
 }
 
 .btn-style {
@@ -183,7 +187,7 @@ body {
   margin: 65px 20px 0px;
 
   h1 {
-    color: #f4e2e2;
+    color: 	#ffc313;
     font-size: 45px;
     font-weight: bold;
     line-height: 40px;
@@ -191,8 +195,8 @@ body {
   }
 
   h2 {
-    color: #f4e2e2;
-    font-size: 30px;
+    color: 	#ffc313;
+    font-size: 25px;
     font-weight: bold;
     line-height: 35px;
     text-shadow: 2px 2px 4px black;
@@ -216,7 +220,7 @@ body {
 
 .create {
   height: 250px;
-  background-color: rgba(133, 227, 253, .6);
+  background-color: #d4d4d4;
   // background-color: #84e4ff;
   padding-top: 75px;
   cursor: pointer;
@@ -224,7 +228,7 @@ body {
 
 .your-employees {
   height: 250px;
-  background-color: rgba(82, 215, 253, .6);
+  background-color: #bbbbbb;
   // background-color: #52d7fd;
   padding-top: 75px;
   cursor: pointer;
@@ -236,4 +240,16 @@ body {
   // background-color: #03c7ff;
   padding-top: 75px;
   cursor: pointer;
+}
+
+.handlebars {
+  font-size: 20px;
+}
+
+#sign-out {
+  background-color: #efb431;
+}
+
+#change-password {
+  background-color: #daa520;
 }

@@ -4,7 +4,7 @@
     <div class="card-body col-sm-2 col-med-2" style="background-color: #d4d4d4; width: 90%; min-height: 300px; padding-top: 20px;">
       <h3 data-id={{employee.id}}><strong>{{employee.name}}</strong></h3>
       <h4>Current Salary</h4>
-      <h4 data-id={{employee.id}}><small>${{employee.salary}}</small></h4>
+      <h4 data-id={{employee.id}}><small>{{employee.salary}}</small></h4>
       <h4>Goals</h4>
       <h4 data-id={{employee.id}}><small>{{employee.goals}}</small></h4>
       <h4>Reviews</h4>
@@ -12,7 +12,7 @@
       <h4>Hire Date</h4>
       <h4 data-id={{employee.id}}><small>{{employee.date}}</small></h4>
 
-        <button style="margin: 15px 5px;" class="btn btn-style update-employee" data-id='{{employee.id}}'>UPDATE EMPLOYEE</button>
+        <button style="margin: 15px 5px;" type="submit" class="btn btn-info btn-style">UPDATE EMPLOYEE</button>
         <button style="margin: 15px 5px;" class="btn btn-danger btn-style delete-employee" data-id='{{employee.id}}'>DELETE EMPLOYEE</button>
       </form>
     </div>
