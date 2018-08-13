@@ -13,13 +13,14 @@ const createEmployee = function (data) {
   })
 }
 
-const getEmployees = function () {
+const getEmployees = function (data) {
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/employees',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data: data
   })
 }
 

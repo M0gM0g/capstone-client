@@ -1,6 +1,6 @@
 const store = require('../store.js')
 const showAllEmployees = require('../templates/helpers/employee.handlebars')
-const showEmployeesEdit = require('../templates/helpers/showEmployeeEdit.handlebars')
+// const showEmployeesEdit = require('../templates/helpers/showEmployeeEdit.handlebars')
 
 const createEmployeeSuccess = function (createEmployeeResponse) {
   $('#create-employee-form')[0].reset()
@@ -16,7 +16,6 @@ const createEmployeeError = function (createEmployeeError) {
 
 const getEmployeesSuccess = function (data) {
   store.employees = data.employees
-  console.log('data.employees is ', data.employees)
   if (data.employees.length > 0) {
     const showEmployeesHtml = showAllEmployees({
       employees: data.employees
@@ -51,7 +50,7 @@ const getEmployeesError = function (data) {}
 //     const showUserEmployeesHtml = showUserEmployees({
 //       employees: userEmployees
 //     })
-//     console.log('userEmployees is ', userEmployees)
+//
 //     $('#create-employee').delay(100).fadeOut(100)
 //     $('#dashboard').delay(100).fadeOut(100)
 //     $('#logo').delay(100).fadeOut(100)
@@ -69,23 +68,26 @@ const getEmployeesError = function (data) {}
 
 const getUserEmployeesError = function (data) {}
 
-const updateEmployeeSuccess = function (data) {
-  store.employees = data.employees
-  const showEmployeesEditHtml = showEmployeesEdit({
-    employees: data.employees
-  })
-  $('#dashboard').delay(100).fadeOut(100)
-  $('#all-employees').delay(200).fadeIn(100)
-  $('#logo').delay(100).fadeOut(100)
-  $('#dash-nav').delay(200).fadeIn(100)
-  $('#create-employee-form')[0].reset()
-  $('#create-employee-error').hide()
-  $('#create-employee').delay(100).fadeOut(100)
-  $('.show-content').delay(100).fadeIn(100)
-  $('.show-content').html(showEmployeesEditHtml)
+// const updateEmployeeSuccess = function (data) {
+//   store.employees = data.employees
+//   const showEmployeesEditHtml = showEmployeesEdit({
+//     employees: data.employees
+//   })
+//   $('#dashboard').delay(100).fadeOut(100)
+//   $('#all-employees').delay(200).fadeIn(100)
+//   $('#logo').delay(100).fadeOut(100)
+//   $('#dash-nav').delay(200).fadeIn(100)
+//   $('#create-employee-form')[0].reset()
+//   $('#create-employee-error').hide()
+//   $('#create-employee').delay(100).fadeOut(100)
+//   $('.show-content').delay(100).fadeIn(100)
+//   $('.show-content').html(showEmployeesEditHtml)
+// }
+
+const updateEmployeeSuccess = function (updateSurveyResponse) {
+  $('#successModal').modal('show')
+  $('#success-message').html('Your employee has been updated!')
 }
-
-
 
 const updateEmployeeError = function (updateEmployeeError) {}
 

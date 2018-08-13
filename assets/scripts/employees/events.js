@@ -20,15 +20,12 @@ const onCreateEmployeeTab = function (event) {
   $('#logo').delay(100).fadeOut(100)
   $('#dash-nav').delay(200).fadeIn(100)
 }
-
-const onEditEmployeeTab = function (event) {
-  console.log('button clicked!')
-  event.preventDefault()
-  $('#dashboard').delay(100).fadeOut(100)
-  $('#edit-employee').delay(200).fadeIn(100)
-  $('#logo').delay(100).fadeOut(100)
-  $('#dash-nav').delay(200).fadeIn(100)
-}
+//   event.preventDefault()
+//   $('#dashboard').delay(100).fadeOut(100)
+//   $('#edit-employee').delay(200).fadeIn(100)
+//   $('#logo').delay(100).fadeOut(100)
+//   $('#dash-nav').delay(200).fadeIn(100)
+// }
 
 const onCreateEmployee = function (event) {
   event.preventDefault()
@@ -49,7 +46,7 @@ const onGetEmployees = function (event) {
 const onRemoveEmployee = function (event) {
   event.preventDefault()
   const employeeId = $(event.target).attr('data-id')
-  console.log('data is ', employeeId)
+
   employeesApi.removeEmployee(employeeId)
     .then(refreshEmployeesOnDelete)
     .catch(employeesUi.removeEmployeeError)
@@ -62,7 +59,7 @@ const onRemoveEmployee = function (event) {
 //   // const data = $(event.target).attr('data-id')
 //
 //   const data = getFormFields(event.target)
-//   console.log('data is ', data)
+
 //   employeesApi.removeEmployee(data)
 //     .then(refreshEmployeesOnDelete)
 //     .catch(employeesUi.removeEmployeeError)
@@ -72,8 +69,7 @@ const onUpdateEmployee = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const employeeId = $(event.target).attr('data-id')
-  console.log('data is ', data)
-  console.log('employeeId is ', employeeId)
+
   employeesApi.updateEmployee(data, employeeId)
     .then(employeesUi.updateEmployeeSuccess)
     .catch(employeesUi.updateEmployeeError)
@@ -83,7 +79,7 @@ const onUpdateEmployee = function (event) {
 const refreshEmployees = function (event) {
   $('.show-content').html('')
   employeesApi.getEmployees()
-    .then(employeesUi.getUserEmployeesSuccess)
+    .then(employeesUi.getEmployeesSuccess)
     .catch()
 }
 
@@ -108,6 +104,5 @@ module.exports = {
   refreshEmployees,
   onCreateEmployeeTab,
   onDashNav,
-  onGetUserEmployees,
-  onEditEmployeeTab
+  onGetUserEmployees
 }

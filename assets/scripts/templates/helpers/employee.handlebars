@@ -11,6 +11,15 @@
       <h4 data-id={{employee.id}}><small>{{employee.reviews}}</small></h4>
       <h4>Hire Date</h4>
       <h4 data-id={{employee.id}}><small>{{employee.date}}</small></h4>
+<h2><small>Update Employee Salary Below</small></h2>
+      <form class='update-employee' data-id="{{employee.id}}">
+              <!-- <input type="text" name="survey[question]" tabindex="4" class="form-control" placeholder="{{employee.name}}" required> -->
+              <input type="intiger" name="employee[salary]" tabindex="4" class="form-control" placeholder="{{employee.salary}}" required>
+              <!-- <input type="text" name="survey[question]" tabindex="4" class="form-control" placeholder="{{employee.goals}}" required>
+              <input type="text" name="survey[question]" tabindex="4" class="form-control" placeholder="{{employee.reviews}}" required>
+              <input type="text" name="survey[question]" tabindex="4" class="form-control" placeholder="{{employee.date}}" required> -->
+
+
 
         <button style="margin: 15px 5px;" class="btn btn-style update-employee" data-id='{{employee.id}}'>UPDATE EMPLOYEE</button>
         <button style="margin: 15px 5px;" class="btn btn-danger btn-style delete-employee" data-id='{{employee.id}}'>DELETE EMPLOYEE</button>

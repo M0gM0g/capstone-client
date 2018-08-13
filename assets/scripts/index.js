@@ -76,8 +76,8 @@ $(() => {
   $('#edit-employee-form').on('submit', employeeEvents.onCreateEmployee)
 
   // Update Employee
-  $('.update-employee').on('click', employeeEvents.onEditEmployeeTab)
-
+  // $('.update-employee').on('click', employeeEvents.onEditEmployeeTab)
+  $('.show-content').on('submit', '.update-employee', employeeEvents.onUpdateEmployee)
   // Remove Employee
   $('.show-content').on('click', '.delete-employee', employeeEvents.onRemoveEmployee)
 })

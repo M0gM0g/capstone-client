@@ -1,74 +1,59 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+## The application:
+re-View is a full-stack application used for creating and displaying all of your direct reports (employees) at a glance.
 
-# browser-template
+Simply sign up to create and account. Sign in to start creating your own employee database. From your dashboard you can create, view, edit and delete employees and their information.
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+![alt text](https://i.imgur.com/fK1DSoW.png)
 
-## Installation
+Visit https://m0gm0g.github.io/capstone-client/ to start.
 
-1. [Download](../../archive/master.zip) this template.
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `re-View` with the name of
-    your project.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
+## Links:
+Back end repo: https://github.com/M0gM0g/capstone-backend
+Front end repo: https://github.com/M0gM0g/capstone-client
 
-## Structure
+Front end deployed: https://m0gm0g.github.io/capstone-client/
+Back end deployed: https://stormy-mesa-16781.herokuapp.com/
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+## Technology
+For this application I used:
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`config/environment.js`](config/environment.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+javascript, html, css, boostrap, handlebars, ruby on rails
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+## Unsolved Problems
+I would like to be able to edit all of an employees information seamlessly.  In the future, I'd love to import salary information straight from human resources and allow the user to see a history of updates to track their employees progress
+more efficiently.
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+## Wireframes and User stories
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+Wireframe: https://i.imgur.com/wSfFG8A.png
 
-## Tasks
+ERD: https://i.imgur.com/BNCKnOb.png
 
-Developers should run these often!
+User Stories: As a user I want to be able to:
 
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt test`: runs any automated tests, depends on `grunt build`
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
+-create a database of employees
 
-## Additional Resources
+-store data about those employees such as:
+salary history, goals, performance evaluations, future goals
 
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
+-update, view, create and destroy records and employees
 
-## [License](LICENSE)
 
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+## Routes and Paths
+
+User Routes: Sign Up POST /sign-up
+             Sign In POST /sign-in
+             Change Password PATCH /change-password
+             Sign Out DELETE /sign-out
+
+Employee Routes: Create POST /employees
+               Get All   GET /employees
+               Delete DELETE /employees/:id
+               Update PATCH /employees/:id
+
+
+## Planning, Process & Problem-solving
+
+I planned my project using user stories, an ERD diagram and a wireframe.
+I wanted the app to be straight forward and easy to use. The goal was to have all of the information that you need for an employee review at your fingertips.
+I followed along with the suggested timeline and stuck to it as much as possible.

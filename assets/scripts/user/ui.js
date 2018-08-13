@@ -42,7 +42,6 @@ const logInError = function (logInError) {
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
-  console.log('change pw worked')
   $('#change-password-form')[0].reset()
   $('#change-pw-error').hide()
   $('#changePasswordModal').modal('hide')
@@ -51,7 +50,6 @@ const changePasswordSuccess = function (changePasswordResponse) {
 }
 
 const changePasswordError = function (changePasswordError) {
-  console.log('change pw did not worked')
   $('#change-pw-error').show()
   $('#change-password-form')[0].reset()
 }
