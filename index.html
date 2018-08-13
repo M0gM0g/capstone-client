@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>re-View</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top navbar-custom">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a id="logo" class="navbar-brand brand-custom" href="#">re-View</a>
+            <a id="dash-nav" class="navbar-brand brand-custom" href="#">re-View</a>
+
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <button id="change-password" type="button" class="btn btn-info btn-style" data-toggle="modal" data-target="#changePasswordModal"><span class="glyphicon glyphicon-lock"></span> Change Password </button>
+              <button id="sign-out" type="button" class="btn btn-secondary btn-style" data-toggle="modal" data-target="#exampleModal"><span class="glyphicon glyphicon-log-out"></span> Sign Out</button>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- message to display to user -->
+      <!-- <div class="user-message col-xs-12 user-message"></div> -->
+        <div class="show-content col-xs-12 show-content"></div>
+
+      <!--Register/Log In Form-->
+      <div id="auth-forms" class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+    				<div class="panel panel-login">
+    					<div class="panel-heading">
+    						<div class="row">
+    							<div class="col-xs-6">
+    								<a href="#" class="active" id="register-form-link"><span class="glyphicon glyphicon-plus"></span> Register</a>
+    							</div>
+    							<div class="col-xs-6">
+    								<a href="#" id="login-form-link"><span class="glyphicon glyphicon-user"></span> Log In</a>
+    							</div>
+    						</div>
+    						<hr>
+    					</div>
+    					<div class="panel-body">
+    						<div class="row">
+    							<div class="col-lg-12">
+    								<form id="register-form" style="display: block;">
+                      <div id="register-error" class="alert alert-danger">
+                        <strong>Unable to register.</strong> Please try again.
+                      </div>
+    									<div class="form-group">
+    										<input type="email" name="credentials[email]" tabindex="1" class="form-control" placeholder="Email Address" required>
+    									</div>
+    									<div class="form-group">
+    										<input type="password" name="credentials[password]" tabindex="2" class="form-control" placeholder="Password" required>
+    									</div>
+    									<div class="form-group">
+    										<input type="password" name="credentials[password_confirmation]" tabindex="2" class="form-control" placeholder="Confirm Password" required>
+    									</div>
+    									<div class="form-group">
+    										<div class="row">
+    											<div class="col-sm-6 col-sm-offset-3">
+    												<input type="submit" name="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+    											</div>
+    										</div>
+    									</div>
+    								</form>
+                    <form id="login-form" style="display: none;">
+                      <div id="register-success"></div>
+                      <div id="login-error" class="alert alert-danger">
+                        <strong>Unable to log in.</strong> Please try again.
+                      </div>
+                      <div class="form-group">
+    										<input type="email" name="credentials[email]" id="email" tabindex="1" class="form-control" placeholder="Email Address" required>
+    									</div>
+                      <div class="form-group">
+                        <input type="password" name="credentials[password]" tabindex="2" class="form-control" placeholder="Password" required>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-sm-6 col-sm-offset-3">
+                            <input type="submit" name="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+      </div>
+
+      <div id="dashboard">
+
+        <div class="container-fluid text-center dashboard-header">
+          <div class="row">
+            <h1>Welcome to re-View</h1>
+            <h2>All your direct reports at a glance</h2>
+            <h2>Keeping track of your team's progress, goals and carreer trajectory, simplified.</h2>
+          </div>
+        </div>
+
+        <div class="container-fluid text-center dashboard">
+          <div class="row">
+            <div class="col-sm-6 create">
+              <img width="60px" src="https://i.imgur.com/aGWnRZg.png">
+              <h4>Create A Direct Report</h4>
+            </div>
+            <div class="col-sm-6 your-employees">
+              <img width="60px" src="https://i.imgur.com/xSytO1Z.png">
+              <h4>View Your Direct Reports</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!--CREATE EMPLOYEE START-->
+      <div id="create-employee">
+
+        <div class="container-fluid text-center create-employee">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="panel panel-login">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <form id="create-employee-form" style="display: block;">
+                        <div id="create-employee-error" class="alert alert-danger">
+                          <strong>Unable to create employee.</strong> Please try again.
+                        </div>
+                        <div>
+                          <img width="75px" src="https://i.imgur.com/9VxsuVf.png">
+                          <h1>Create new direct report</h1>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="employee[name]" class="form-control" placeholder="Name" required>
+                          <input type="integer" name="employee[salary]" class="form-control" placeholder="Yearly Salary (no commas)" required>
+                          <input type="text" name="employee[goals]" class="form-control" placeholder="Goals" required>
+                          <input type="text" name="employee[reviews]" class="form-control" placeholder="Reviews" required>
+                          <input type="date" name="employee[date]" class="form-control" placeholder="Date" required>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+
+                            <div class="col-sm-6">
+                              <input type="submit" class="form-control btn btn-create-Employee" value="Create Your Employee">
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--CREATE Employee END-->
+
+      <!--Edit EMPLOYEE START-->
+      <div id="edit-employee">
+
+        <div class="container-fluid text-center edit-employee">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="panel panel-login">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <form id="edit-employee-form" style="display: block;">
+                        <div id="edit-employee-error" class="alert alert-danger">
+                          <strong>Unable to edit employee.</strong> Please try again.
+                        </div>
+                        <div>
+                          <img width="75px" src="https://i.imgur.com/9VxsuVf.png">
+                          <h1>Edit a direct report</h1>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="employee[name]" class="form-control" placeholder="Name" required>
+                          <input type="integer" name="employee[salary]" class="form-control" placeholder="Salary" required>
+                          <input type="text" name="employee[goals]" class="form-control" placeholder="Goals" required>
+                          <input type="text" name="employee[reviews]" class="form-control" placeholder="Reviews" required>
+                          <input type="date" name="employee[date]" class="form-control" placeholder="Date" required>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <input type="submit" class="form-control btn btn-edit-Employee" value="Edit Your Employee">
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--Edit Employee END-->
+
+      <!-- Success Message Modal -->
+      <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <div id="success-message"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message Modal -->
+      <div id="messageModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <div id="message"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Change Password Modal -->
+      <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h2 class="modal-title-custom" id="exampleModalLabel">Change Password</h2>
+            </div>
+            <div class="modal-body">
+              <form id="change-password-form">
+                <div class="form-group">
+                  <div id="change-pw-error" class="alert alert-danger">
+                    <strong>Change password failed.</strong> Please try again.
+                  </div>
+                  <label for="exampleInputEmail1">Old Password</label>
+                  <input name="passwords[old]" type="password" class="form-control" aria-describedby="emailHelp" placeholder="Old Password">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">New Password</label>
+                  <input name="passwords[new]" type="password" class="form-control" placeholder="New Password">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </body>
+</html>
